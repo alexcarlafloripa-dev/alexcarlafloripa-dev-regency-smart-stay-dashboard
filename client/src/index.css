@@ -1,0 +1,257 @@
+/**
+ * Design: Regency Square Smart Stay - Elegância Premium
+ * Cores: Marrom chocolate, Bege/Nude, Dourado/Bronze
+ * Tipografia: Playfair Display (títulos) + Inter (corpo) + JetBrains Mono (valores)
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Playfair Display", Georgia, serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Regency light palette: white, ivory, graphite and gold */
+  --background: #fbfaf7;
+  --foreground: #1d1711;
+  --card: rgb(255 255 255 / 92%);
+  --card-foreground: #1d1711;
+  --popover: rgb(255 255 255 / 98%);
+  --popover-foreground: #1d1711;
+  --primary: #caa35f;
+  --primary-foreground: #12100d;
+  --secondary: #f1eadf;
+  --secondary-foreground: #3a2a1d;
+  --muted: #f4efe7;
+  --muted-foreground: #756653;
+  --accent: #b8733b;
+  --accent-foreground: #fff6e6;
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 60);
+  --border: rgb(202 163 95 / 28%);
+  --input: rgb(29 23 17 / 8%);
+  --ring: #caa35f;
+  --chart-1: #caa35f;
+  --chart-2: #b8733b;
+  --chart-3: #7e7767;
+  --chart-4: #ead9bd;
+  --chart-5: #8f5a32;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1d1711;
+  --sidebar-primary: #caa35f;
+  --sidebar-primary-foreground: #12100d;
+  --sidebar-accent: #f4efe7;
+  --sidebar-accent-foreground: #1d1711;
+  --sidebar-border: rgb(202 163 95 / 24%);
+  --sidebar-ring: #caa35f;
+}
+
+.dark {
+  /* Regency PDF palette: graphite, warm gold, copper and ivory */
+  --background: #12100d;
+  --foreground: #f5efe4;
+  --card: rgb(31 27 22 / 82%);
+  --card-foreground: #f5efe4;
+  --popover: rgb(24 21 18 / 96%);
+  --popover-foreground: #f5efe4;
+  --primary: #caa35f;
+  --primary-foreground: #12100d;
+  --secondary: #29231d;
+  --secondary-foreground: #ead9bd;
+  --muted: #2f2922;
+  --muted-foreground: #c9b99f;
+  --accent: #b8733b;
+  --accent-foreground: #fff6e6;
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 60);
+  --border: rgb(202 163 95 / 24%);
+  --input: rgb(245 239 228 / 10%);
+  --ring: #caa35f;
+  --chart-1: #caa35f;
+  --chart-2: #b8733b;
+  --chart-3: #7e7767;
+  --chart-4: #ead9bd;
+  --chart-5: #8f5a32;
+  --sidebar: #0d0c0a;
+  --sidebar-foreground: #f5efe4;
+  --sidebar-primary: #caa35f;
+  --sidebar-primary-foreground: #12100d;
+  --sidebar-accent: #211c17;
+  --sidebar-accent-foreground: #f5efe4;
+  --sidebar-border: rgb(202 163 95 / 22%);
+  --sidebar-ring: #caa35f;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1400px;
+    }
+  }
+
+  /* Elegant card effect */
+  .glass-card {
+    @apply bg-card backdrop-blur-sm border border-border shadow-lg;
+  }
+
+  /* Gold glow effect for premium elements */
+  .glow-gold {
+    box-shadow: 0 0 20px oklch(0.65 0.12 75 / 25%),
+                0 0 40px oklch(0.65 0.12 75 / 10%);
+  }
+
+  .glow-bronze {
+    box-shadow: 0 0 15px oklch(0.55 0.10 55 / 20%),
+                0 0 30px oklch(0.55 0.10 55 / 8%);
+  }
+
+  /* Status indicator dots */
+  .status-dot {
+    @apply w-2.5 h-2.5 rounded-full;
+  }
+
+  .status-disponivel {
+    @apply bg-emerald-600 shadow-[0_0_8px_theme(colors.emerald.600/50%)];
+  }
+
+  .status-reservado {
+    @apply bg-amber-500 shadow-[0_0_8px_theme(colors.amber.500/50%)];
+  }
+
+  .status-vendido {
+    @apply bg-red-600 shadow-[0_0_8px_theme(colors.red.600/50%)];
+  }
+
+  /* Money values styling */
+  .money {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Display font for titles */
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  /* Elegant gradient text - gold/bronze */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#f5e5bd] via-[#caa35f] to-[#b8733b];
+  }
+
+  /* Premium gradient text for dark mode */
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500;
+  }
+
+  /* Background subtle pattern */
+  .bg-mesh {
+    background:
+      linear-gradient(180deg, #ffffff 0%, #fbfaf7 42%, #f4efe7 100%);
+  }
+
+  /* Dark mode mesh */
+  .dark .bg-mesh {
+    background: 
+      radial-gradient(at 40% 20%, oklch(0.65 0.12 75 / 12%) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, oklch(0.55 0.08 45 / 8%) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, oklch(0.65 0.12 75 / 8%) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, oklch(0.55 0.08 45 / 6%) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, oklch(0.65 0.12 75 / 10%) 0px, transparent 50%);
+  }
+
+  /* Shimmer animation para skeleton loading */
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+  .animate-shimmer {
+    background-size: 200% auto;
+    animation: shimmer 1.5s linear infinite;
+  }
+}

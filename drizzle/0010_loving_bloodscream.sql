@@ -1,0 +1,1 @@
+ALTER TABLE `reservations` MODIFY COLUMN `status` enum('reservado','assinado','vendido') NOT NULL DEFAULT 'reservado';

@@ -1,0 +1,90 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1772319775103,
+      "tag": "0000_glorious_vulture",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1772319866325,
+      "tag": "0001_tiresome_turbo",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1772321419247,
+      "tag": "0002_silky_sister_grimm",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1772327315686,
+      "tag": "0003_concerned_scorpion",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1772380124007,
+      "tag": "0004_remarkable_sabra",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1772380952212,
+      "tag": "0005_unknown_maelstrom",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1772383348389,
+      "tag": "0006_gigantic_serpent_society",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1772385923282,
+      "tag": "0007_sharp_bug",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1772390961173,
+      "tag": "0008_living_dark_beast",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1772392281143,
+      "tag": "0009_wonderful_shotgun",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "5",
+      "when": 1772392408030,
+      "tag": "0010_loving_bloodscream",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1772401145274,
+      "tag": "0011_wet_thaddeus_ross",
+      "breakpoints": true
+    }
+  ]
+}
